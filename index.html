@@ -3,51 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sam & Yulet</title>
 
 <style>
 
+body{
+margin:0;
+padding:0;
+background:#000;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Georgia, serif;
+color:white;
+text-align:center;
+}
+
+.contenedor{
+width:90%;
+max-width:500px;
+}
+
+h1{
+font-size:50px;
+margin-bottom:20px;
+color:#d4af37;
+}
+
+p{
+font-size:22px;
+opacity:.9;
+line-height:1.5;
+}
+
+button{
+margin:10px;
+padding:15px 35px;
+font-size:18px;
+border:none;
+border-radius:40px;
+background:#d4af37;
+color:#000;
+cursor:pointer;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.idioma{
+margin-top:30px;
+}
+
 </style>
+
+</head>
 
 <body>
 
-<div>
+<div class="contenedor">
 
 <h1>Sam & Yulet</h1>
 
-<p id="mensaje">Selecciona tu idioma</p>
+<p id="mensaje">
+Selecciona tu idioma
+</p>
 
-<button onclick="espanol()">🇲🇽 Español</button>
 
-<button onclick="ingles()">🇺🇸 English</button>
+<div class="idioma">
 
-<p id="bienvenida"></p>
+<button onclick="espanol()">
+🇲🇽 Español
+</button>
+
+<button onclick="ingles()">
+🇺🇸 English
+</button>
+
+</div>
+
 
 <button id="abrir" style="display:none;" onclick="abrirInvitacion()">
 Abrir invitación
 </button>
 
+
 </div>
+
 
 <script>
 
 function espanol(){
-document.getElementById("mensaje").innerHTML="Nos encantaría compartir este momento contigo.";
-document.getElementById("abrir").innerHTML="Abrir invitación";
-document.getElementById("abrir").style.display="inline-block";
+
+document.getElementById("mensaje").innerHTML=
+"Nos encantaría compartir este momento contigo.";
+
+document.getElementById("abrir").innerHTML=
+"Abrir invitación";
+
+document.getElementById("abrir").style.display=
+"inline-block";
+
 }
+
 
 function ingles(){
-document.getElementById("mensaje").innerHTML="We would love to share this moment with you.";
-document.getElementById("abrir").innerHTML="Open invitation";
-document.getElementById("abrir").style.display="inline-block";
+
+document.getElementById("mensaje").innerHTML=
+"We would love to share this special moment with you.";
+
+document.getElementById("abrir").innerHTML=
+"Open invitation";
+
+document.getElementById("abrir").style.display=
+"inline-block";
+
 }
 
+
 function abrirInvitacion(){
+
 alert("¡Bienvenido a nuestra invitación!");
+
 }
 
 </script>
+
 
 </body>
 </html>
