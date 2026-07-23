@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sam & Yulet</title>
+<title>Samuel & Yulet</title>
 
 <style>
 
@@ -40,14 +40,12 @@ text-align:center;
 
 }
 
-
 .contenedor{
 
 width:90%;
 max-width:600px;
 
 }
-
 
 .nombre{
 
@@ -61,7 +59,6 @@ margin-bottom:25px;
 
 }
 
-
 .mensaje{
 
 font-size:22px;
@@ -74,7 +71,6 @@ color:#f5ead7;
 
 }
 
-
 .subtitulo{
 
 font-size:24px;
@@ -84,7 +80,6 @@ color:#d6b25e;
 margin-bottom:25px;
 
 }
-
 
 button{
 
@@ -110,13 +105,11 @@ transition:0.3s;
 
 }
 
-
 button:hover{
 
 transform:scale(1.08);
 
 }
-
 
 .idiomas button{
 
@@ -126,13 +119,11 @@ color:#1b2115;
 
 }
 
-
 .oculto{
 
 display:none;
 
 }
-
 
 .decoracion{
 
@@ -144,35 +135,27 @@ margin-bottom:20px;
 
 }
 
-
 </style>
 
 </head>
 
-
 <body>
-
 
 <div class="contenedor">
 
-
 <div id="idioma">
-
 
 <div class="decoracion">
 💍
 </div>
 
-
 <h1 class="nombre">
-Sam & Yulet
+Samuel & Yulet
 </h1>
-
 
 <p class="subtitulo">
 Por favor, selecciona el idioma en el que deseas leer nuestra invitación.
 </p>
-
 
 <div class="idiomas">
 
@@ -180,101 +163,73 @@ Por favor, selecciona el idioma en el que deseas leer nuestra invitación.
 🇲🇽 Español
 </button>
 
-
 <button onclick="seleccionarIdioma('en')">
 🇺🇸 English
 </button>
 
-
 </div>
 
-
 </div>
-
-
-
-
 
 <div id="invitacion" class="oculto">
-
 
 <div class="decoracion">
 💍
 </div>
 
-
 <h1 class="nombre">
-Sam & Yulet
+Samuel & Yulet
 </h1>
-
 
 <p id="texto" class="mensaje">
 
 </p>
 
-
-<button onclick="abrirInvitacion()" >
+<button id="abrir" onclick="abrirInvitacion()">
 Abrir invitación
 </button>
 
-
 </div>
 
-
 </div>
-
-
 
 <script>
 
-
 function seleccionarIdioma(idioma){
-
 
 document.getElementById("idioma").style.display="none";
 
 document.getElementById("invitacion").style.display="block";
 
-
 if(idioma=="es"){
 
-
 document.getElementById("texto").innerHTML=
-
 "Nos encantaría compartir este momento tan especial contigo.";
 
+document.getElementById("abrir").innerHTML=
+"Abrir invitación";
 
 }
-
 
 else{
 
-
 document.getElementById("texto").innerHTML=
-
 "We would love to share this special moment with you.";
 
+document.getElementById("abrir").innerHTML=
+"Open Invitation";
 
 }
 
-
 }
-
-
 
 function abrirInvitacion(){
 
-
 alert("Bienvenido a nuestra invitación 💍");
-
 
 }
 
-
-
 </script>
-
-
 
 </body>
 
