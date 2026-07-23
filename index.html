@@ -7,62 +7,45 @@
 
 <style>
 
-body{
-margin:0;
-padding:0;
-background:#000;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-font-family:Georgia, serif;
-color:white;
-text-align:center;
-}
-
-h1{
-font-size:50px;
-margin-bottom:20px;
-}
-
-p{
-font-size:20px;
-opacity:.8;
-}
-
-button{
-margin-top:30px;
-padding:18px 45px;
-font-size:20px;
-border:none;
-border-radius:40px;
-background:white;
-color:black;
-cursor:pointer;
-}
-
-button:hover{
-transform:scale(1.05);
-}
-
-</style>
-
-</head>
-
 <body>
 
 <div>
 
 <h1>Sam & Yulet</h1>
 
-<p>Nos encantaría compartir este momento contigo.</p>
+<p id="mensaje">Selecciona tu idioma</p>
 
-<button onclick="alert('¡Bienvenido a nuestra invitación!')">
+<button onclick="espanol()">🇲🇽 Español</button>
+
+<button onclick="ingles()">🇺🇸 English</button>
+
+<p id="bienvenida"></p>
+
+<button id="abrir" style="display:none;" onclick="abrirInvitacion()">
 Abrir invitación
 </button>
 
 </div>
 
-</body>
+<script>
 
+function espanol(){
+document.getElementById("mensaje").innerHTML="Nos encantaría compartir este momento contigo.";
+document.getElementById("abrir").innerHTML="Abrir invitación";
+document.getElementById("abrir").style.display="inline-block";
+}
+
+function ingles(){
+document.getElementById("mensaje").innerHTML="We would love to share this moment with you.";
+document.getElementById("abrir").innerHTML="Open invitation";
+document.getElementById("abrir").style.display="inline-block";
+}
+
+function abrirInvitacion(){
+alert("¡Bienvenido a nuestra invitación!");
+}
+
+</script>
+
+</body>
 </html>
