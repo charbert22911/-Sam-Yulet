@@ -40,12 +40,14 @@ text-align:center;
 
 }
 
+
 .contenedor{
 
 width:90%;
-max-width:600px;
+max-width:650px;
 
 }
+
 
 .nombre{
 
@@ -59,17 +61,19 @@ margin-bottom:25px;
 
 }
 
-.mensaje{
+
+.texto{
 
 font-size:22px;
 
-line-height:1.5;
-
-margin-bottom:35px;
+line-height:1.6;
 
 color:#f5ead7;
 
+margin-bottom:35px;
+
 }
+
 
 .subtitulo{
 
@@ -80,6 +84,7 @@ color:#d6b25e;
 margin-bottom:25px;
 
 }
+
 
 button{
 
@@ -101,9 +106,10 @@ color:#1b2115;
 
 font-family:Georgia, serif;
 
-transition:0.3s;
+transition:.4s;
 
 }
+
 
 button:hover{
 
@@ -111,13 +117,13 @@ transform:scale(1.08);
 
 }
 
+
 .idiomas button{
 
 background:#f5ead7;
 
-color:#1b2115;
-
 }
+
 
 .oculto{
 
@@ -125,9 +131,38 @@ display:none;
 
 }
 
+
+.animacion{
+
+animation:entrada 2s ease;
+
+}
+
+
+@keyframes entrada{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
 .decoracion{
 
-font-size:35px;
+font-size:40px;
 
 color:#d6b25e;
 
@@ -135,101 +170,228 @@ margin-bottom:20px;
 
 }
 
+
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="contenedor">
 
+
+<!-- SELECCION DE IDIOMA -->
+
+
 <div id="idioma">
+
 
 <div class="decoracion">
 💍
 </div>
 
+
 <h1 class="nombre">
 Samuel & Yulet
 </h1>
 
+
 <p class="subtitulo">
+
 Por favor, selecciona el idioma en el que deseas leer nuestra invitación.
+
 </p>
 
-<div class="idiomas">
 
 <button onclick="seleccionarIdioma('es')">
+
 🇲🇽 Español
+
 </button>
+
 
 <button onclick="seleccionarIdioma('en')">
+
 🇺🇸 English
+
 </button>
 
-</div>
 
 </div>
+
+
+
+
+
+<!-- INVITACION -->
+
 
 <div id="invitacion" class="oculto">
 
+
+<div class="animacion">
+
+
 <div class="decoracion">
 💍
 </div>
 
+
 <h1 class="nombre">
+
 Samuel & Yulet
+
 </h1>
 
-<p id="texto" class="mensaje">
+
+<p id="versiculo" class="texto">
 
 </p>
 
-<button id="abrir" onclick="abrirInvitacion()">
-Abrir invitación
+
+<button id="continuar" onclick="continuar()">
+
+Continuar
+
 </button>
 
-</div>
 
 </div>
+
+
+</div>
+
+
+
+
+
+<!-- SIGUIENTE PARTE -->
+
+
+<div id="principal" class="oculto">
+
+
+<div class="animacion">
+
+
+<h1 class="nombre">
+
+Samuel & Yulet
+
+</h1>
+
+
+<p id="mensaje" class="texto">
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
 
 <script>
 
+
+let idiomaSeleccionado="es";
+
+
+
 function seleccionarIdioma(idioma){
+
+
+idiomaSeleccionado=idioma;
+
 
 document.getElementById("idioma").style.display="none";
 
 document.getElementById("invitacion").style.display="block";
 
+
+
 if(idioma=="es"){
 
-document.getElementById("texto").innerHTML=
+
+document.getElementById("versiculo").innerHTML=
+
+"“Todo tiene su tiempo, y todo lo que se quiere debajo del cielo tiene su hora.”<br><br>Eclesiastés 3:1";
+
+
+document.getElementById("continuar").innerHTML=
+
+"Continuar";
+
+
+}
+
+
+else{
+
+
+document.getElementById("versiculo").innerHTML=
+
+"“To everything there is a season, and a time for every purpose under heaven.”<br><br>Ecclesiastes 3:1";
+
+
+document.getElementById("continuar").innerHTML=
+
+"Continue";
+
+
+}
+
+
+}
+
+
+
+
+function continuar(){
+
+
+document.getElementById("invitacion").style.display="none";
+
+document.getElementById("principal").style.display="block";
+
+
+
+if(idiomaSeleccionado=="es"){
+
+
+document.getElementById("mensaje").innerHTML=
+
 "Nos encantaría compartir este momento tan especial contigo.";
 
-document.getElementById("abrir").innerHTML=
-"Abrir invitación";
 
 }
 
 else{
 
-document.getElementById("texto").innerHTML=
+
+document.getElementById("mensaje").innerHTML=
+
 "We would love to share this special moment with you.";
 
-document.getElementById("abrir").innerHTML=
-"Open Invitation";
 
 }
 
-}
-
-function abrirInvitacion(){
-
-alert("Bienvenido a nuestra invitación 💍");
 
 }
+
+
 
 </script>
+
 
 </body>
 
