@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Samuel & Yulet</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+
+margin:0;
+padding:0;
+
+height:100vh;
+
+background:
+linear-gradient(
+rgba(0,0,0,0.75),
+rgba(0,0,0,0.85)
+),
+#1b2115;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-family:Georgia, serif;
+
+color:#f5ead7;
+
+text-align:center;
+
+}
+
+
+.contenedor{
+
+width:90%;
+max-width:650px;
+
+}
+
+
+.nombre{
+
+font-size:58px;
+
+color:#d6b25e;
+
+letter-spacing:3px;
+
+margin-bottom:25px;
+
+}
+
+
+.texto{
+
+font-size:22px;
+
+line-height:1.6;
+
+color:#f5ead7;
+
+margin-bottom:35px;
+
+}
+
+
+.subtitulo{
+
+font-size:24px;
+
+color:#d6b25e;
+
+margin-bottom:25px;
+
+}
+
+
+button{
+
+padding:18px 45px;
+
+margin:10px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:20px;
+
+cursor:pointer;
+
+background:#d6b25e;
+
+color:#1b2115;
+
+font-family:Georgia, serif;
+
+transition:.4s;
+
+}
+
+
+button:hover{
+
+transform:scale(1.08);
+
+}
+
+
+.idiomas button{
+
+background:#f5ead7;
+
+}
+
+
+.oculto{
+
+display:none;
+
+}
+
+
+.animacion{
+
+animation:entrada 2s ease;
+
+}
+
+
+@keyframes entrada{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+.decoracion{
+
+font-size:40px;
+
+color:#d6b25e;
+
+margin-bottom:20px;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="contenedor">
+
+
+<!-- SELECCION DE IDIOMA -->
+
+
+<div id="idioma">
+
+
+<div class="decoracion">
+💍
+</div>
+
+
+<h1 class="nombre">
+Samuel & Yulet
+</h1>
+
+
+<p class="subtitulo">
+
+Por favor, selecciona el idioma en el que deseas leer nuestra invitación.
+
+</p>
+
+
+<button onclick="seleccionarIdioma('es')">
+
+🇲🇽 Español
+
+</button>
+
+
+<button onclick="seleccionarIdioma('en')">
+
+🇺🇸 English
+
+</button>
+
+
+</div>
+
+
+
+
+
+<!-- INVITACION -->
+
+
+<div id="invitacion" class="oculto">
+
+
+<div class="animacion">
+
+
+<div class="decoracion">
+💍
+</div>
+
+
+<h1 class="nombre">
+
+Samuel & Yulet
+
+</h1>
+
+
+<p id="versiculo" class="texto">
+
+</p>
+
+
+<button id="continuar" onclick="continuar()">
+
+Continuar
+
+</button>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+<!-- SIGUIENTE PARTE -->
+
+
+<div id="principal" class="oculto">
+
+
+<div class="animacion">
+
+
+<h1 class="nombre">
+
+Samuel & Yulet
+
+</h1>
+
+
+<p id="mensaje" class="texto">
+
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+<script>
+
+
+let idiomaSeleccionado="es";
+
+
+
+function seleccionarIdioma(idioma){
+
+
+idiomaSeleccionado=idioma;
+
+
+document.getElementById("idioma").style.display="none";
+
+document.getElementById("invitacion").style.display="block";
+
+
+
+if(idioma=="es"){
+
+
+document.getElementById("versiculo").innerHTML=
+
+"“Todo tiene su tiempo, y todo lo que se quiere debajo del cielo tiene su hora.”<br><br>Eclesiastés 3:1";
+
+
+document.getElementById("continuar").innerHTML=
+
+"Continuar";
+
+
+}
+
+
+else{
+
+
+document.getElementById("versiculo").innerHTML=
+
+"“To everything there is a season, and a time for every purpose under heaven.”<br><br>Ecclesiastes 3:1";
+
+
+document.getElementById("continuar").innerHTML=
+
+"Continue";
+
+
+}
+
+
+}
+
+
+
+
+function continuar(){
+
+
+document.getElementById("invitacion").style.display="none";
+
+document.getElementById("principal").style.display="block";
+
+
+
+if(idiomaSeleccionado=="es"){
+
+
+document.getElementById("mensaje").innerHTML=
+
+"Nos encantaría compartir este momento tan especial contigo.";
+
+
+}
+
+else{
+
+
+document.getElementById("mensaje").innerHTML=
+
+"We would love to share this special moment with you.";
+
+
+}
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>
