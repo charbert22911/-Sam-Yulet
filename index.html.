@@ -2,396 +2,203 @@
 <html lang="es">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel & Yulet | Nuestra Boda</title>
 
-<title>Samuel & Yulet</title>
-
-<style>
-
-*{
-box-sizing:border-box;
-}
-
-body{
-
-margin:0;
-padding:0;
-
-height:100vh;
-
-background:
-linear-gradient(
-rgba(0,0,0,0.75),
-rgba(0,0,0,0.85)
-),
-#1b2115;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-font-family:Georgia, serif;
-
-color:#f5ead7;
-
-text-align:center;
-
-}
-
-
-.contenedor{
-
-width:90%;
-max-width:650px;
-
-}
-
-
-.nombre{
-
-font-size:58px;
-
-color:#d6b25e;
-
-letter-spacing:3px;
-
-margin-bottom:25px;
-
-}
-
-
-.texto{
-
-font-size:22px;
-
-line-height:1.6;
-
-color:#f5ead7;
-
-margin-bottom:35px;
-
-}
-
-
-.subtitulo{
-
-font-size:24px;
-
-color:#d6b25e;
-
-margin-bottom:25px;
-
-}
-
-
-button{
-
-padding:18px 45px;
-
-margin:10px;
-
-border:none;
-
-border-radius:50px;
-
-font-size:20px;
-
-cursor:pointer;
-
-background:#d6b25e;
-
-color:#1b2115;
-
-font-family:Georgia, serif;
-
-transition:.4s;
-
-}
-
-
-button:hover{
-
-transform:scale(1.08);
-
-}
-
-
-.idiomas button{
-
-background:#f5ead7;
-
-}
-
-
-.oculto{
-
-display:none;
-
-}
-
-
-.animacion{
-
-animation:entrada 2s ease;
-
-}
-
-
-@keyframes entrada{
-
-from{
-
-opacity:0;
-
-transform:translateY(30px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-
-.decoracion{
-
-font-size:40px;
-
-color:#d6b25e;
-
-margin-bottom:20px;
-
-}
-
-
-</style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+    <!-- PANTALLA DE BIENVENIDA -->
+    <section id="inicio" class="pantalla">
 
-<div class="contenedor">
+        <div class="capa"></div>
 
+        <div class="contenido">
 
-<!-- SELECCION DE IDIOMA -->
+            <h1 class="titulo">
+                Samuel & Yulet
+            </h1>
 
+            <p id="textoIdioma" class="subtitulo">
+                Por favor, selecciona el idioma en el que deseas leer nuestra invitación.
+            </p>
 
-<div id="idioma">
+            <div class="idiomas">
 
+                <button onclick="cambiarIdioma('es')">
+                    🇲🇽 Español
+                </button>
 
-<div class="decoracion">
-💍
-</div>
+                <button onclick="cambiarIdioma('en')">
+                    🇺🇸 English
+                </button>
 
+            </div>
 
-<h1 class="nombre">
-Samuel & Yulet
-</h1>
+        </div>
 
+    </section>
 
-<p class="subtitulo">
+    <!-- INVITACIÓN -->
+    <main id="invitacion" style="display:none;">
 
-Por favor, selecciona el idioma en el que deseas leer nuestra invitación.
+        <!-- VERSÍCULO -->
+        <section class="seccion">
 
-</p>
+            <h2 id="tituloVersiculo">
+                Eclesiastés 3:1
+            </h2>
 
+            <p id="versiculo">
+                Todo tiene su tiempo, y todo lo que se quiere debajo del cielo tiene su hora.
+            </p>
 
-<button onclick="seleccionarIdioma('es')">
+        </section>
 
-🇲🇽 Español
+        <!-- BIENVENIDA -->
+        <section class="seccion">
 
-</button>
+            <h2 id="tituloBienvenida">
+                Bienvenidos
+            </h2>
 
+            <p id="bienvenida">
+                Nos encantaría compartir este momento tan especial contigo.
+            </p>
 
-<button onclick="seleccionarIdioma('en')">
+        </section>
 
-🇺🇸 English
+        <!-- CUENTA REGRESIVA -->
+        <section class="seccion">
 
-</button>
+            <h2 id="tituloCuenta">
+                Faltan...
+            </h2>
 
+            <div id="contador">
 
-</div>
+                <div>
+                    <span id="dias">0</span>
+                    <small id="txtDias">Días</small>
+                </div>
 
+                <div>
+                    <span id="horas">0</span>
+                    <small id="txtHoras">Horas</small>
+                </div>
 
+                <div>
+                    <span id="minutos">0</span>
+                    <small id="txtMinutos">Minutos</small>
+                </div>
 
+                <div>
+                    <span id="segundos">0</span>
+                    <small id="txtSegundos">Segundos</small>
+                </div>
 
+            </div>
 
-<!-- INVITACION -->
+        </section>
 
+        <!-- NUESTRO GRAN DÍA -->
+        <section class="seccion">
 
-<div id="invitacion" class="oculto">
+            <h2 id="tituloEvento">
+                Nuestro Gran Día
+            </h2>
 
+            <p id="mensajeEvento">
+                Acompáñanos a celebrar el inicio de nuestra historia juntos.
+                Damos gracias a Dios por permitirnos llegar hasta este momento
+                y nos alegrará mucho contar con tu presencia.
+            </p>
 
-<div class="animacion">
+            <div class="tarjeta">
 
+                <p>📅 <strong>Sábado 14 de noviembre de 2026</strong></p>
 
-<div class="decoracion">
-💍
-</div>
+                <p>🕐 <strong>1:00 p. m.</strong></p>
 
+                <p>📍 <strong>Salón Jireh</strong></p>
 
-<h1 class="nombre">
+                <p>📌 Av. Amapolas 31 y 32</p>
 
-Samuel & Yulet
+            </div>
 
-</h1>
+            <a
+                id="btnMapa"
+                class="boton"
+                href="https://maps.app.goo.gl/CFgEuXM1NWK9kGJ4A?g_st=ic"
+                target="_blank">
 
+                Ver ubicación
 
-<p id="versiculo" class="texto">
+            </a>
 
-</p>
+            <a
+                id="btnWhatsapp"
+                class="boton boton-secundario"
+                href="https://chat.whatsapp.com/EX8RsBydihEFHcXHEk8LY9?s=cl&p=i&ilr=2"
+                target="_blank">
 
+                Confirmar asistencia
 
-<button id="continuar" onclick="continuar()">
+            </a>
 
-Continuar
+            <p id="fechaLimite">
+                Fecha límite para confirmar:
+                <strong>2 de octubre de 2026</strong>
+            </p>
 
-</button>
+        </section>
 
+        <!-- GALERÍA -->
+        <section class="seccion">
 
-</div>
+            <h2 id="tituloGaleria">
+                Nuestra Historia
+            </h2>
 
+            <div class="galeria">
 
-</div>
+                <div class="foto">
+                    Próximamente fotografía 1
+                </div>
 
+                <div class="foto">
+                    Próximamente fotografía 2
+                </div>
 
+                <div class="foto">
+                    Próximamente fotografía 3
+                </div>
 
+            </div>
 
+        </section>
 
-<!-- SIGUIENTE PARTE -->
+        <!-- DESPEDIDA -->
+        <section class="seccion">
 
+            <h2 id="tituloFinal">
+                Gracias
+            </h2>
 
-<div id="principal" class="oculto">
+            <p id="mensajeFinal">
+                Que Dios bendiga tu vida y tu familia.
+                Será un honor compartir este día contigo.
+            </p>
 
+        </section>
 
-<div class="animacion">
+    </main>
 
-
-<h1 class="nombre">
-
-Samuel & Yulet
-
-</h1>
-
-
-<p id="mensaje" class="texto">
-
-</p>
-
-
-</div>
-
-
-</div>
-
-
-
-</div>
-
-
-
-
-<script>
-
-
-let idiomaSeleccionado="es";
-
-
-
-function seleccionarIdioma(idioma){
-
-
-idiomaSeleccionado=idioma;
-
-
-document.getElementById("idioma").style.display="none";
-
-document.getElementById("invitacion").style.display="block";
-
-
-
-if(idioma=="es"){
-
-
-document.getElementById("versiculo").innerHTML=
-
-"“Todo tiene su tiempo, y todo lo que se quiere debajo del cielo tiene su hora.”<br><br>Eclesiastés 3:1";
-
-
-document.getElementById("continuar").innerHTML=
-
-"Continuar";
-
-
-}
-
-
-else{
-
-
-document.getElementById("versiculo").innerHTML=
-
-"“To everything there is a season, and a time for every purpose under heaven.”<br><br>Ecclesiastes 3:1";
-
-
-document.getElementById("continuar").innerHTML=
-
-"Continue";
-
-
-}
-
-
-}
-
-
-
-
-function continuar(){
-
-
-document.getElementById("invitacion").style.display="none";
-
-document.getElementById("principal").style.display="block";
-
-
-
-if(idiomaSeleccionado=="es"){
-
-
-document.getElementById("mensaje").innerHTML=
-
-"Nos encantaría compartir este momento tan especial contigo.";
-
-
-}
-
-else{
-
-
-document.getElementById("mensaje").innerHTML=
-
-"We would love to share this special moment with you.";
-
-
-}
-
-
-}
-
-
-
-</script>
-
+    <script src="script.js"></script>
 
 </body>
 
