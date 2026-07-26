@@ -6,392 +6,269 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Samuel & Yulet</title>
+<title>Samuel & Yulet | Nuestra Boda</title>
 
-<style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-*{
-box-sizing:border-box;
-}
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-body{
-
-margin:0;
-padding:0;
-
-height:100vh;
-
-background:
-linear-gradient(
-rgba(0,0,0,0.75),
-rgba(0,0,0,0.85)
-),
-#1b2115;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-font-family:Georgia, serif;
-
-color:#f5ead7;
-
-text-align:center;
-
-}
-
-
-.contenedor{
-
-width:90%;
-max-width:650px;
-
-}
-
-
-.nombre{
-
-font-size:58px;
-
-color:#d6b25e;
-
-letter-spacing:3px;
-
-margin-bottom:25px;
-
-}
-
-
-.texto{
-
-font-size:22px;
-
-line-height:1.6;
-
-color:#f5ead7;
-
-margin-bottom:35px;
-
-}
-
-
-.subtitulo{
-
-font-size:24px;
-
-color:#d6b25e;
-
-margin-bottom:25px;
-
-}
-
-
-button{
-
-padding:18px 45px;
-
-margin:10px;
-
-border:none;
-
-border-radius:50px;
-
-font-size:20px;
-
-cursor:pointer;
-
-background:#d6b25e;
-
-color:#1b2115;
-
-font-family:Georgia, serif;
-
-transition:.4s;
-
-}
-
-
-button:hover{
-
-transform:scale(1.08);
-
-}
-
-
-.idiomas button{
-
-background:#f5ead7;
-
-}
-
-
-.oculto{
-
-display:none;
-
-}
-
-
-.animacion{
-
-animation:entrada 2s ease;
-
-}
-
-
-@keyframes entrada{
-
-from{
-
-opacity:0;
-
-transform:translateY(30px);
-
-}
-
-to{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-}
-
-
-.decoracion{
-
-font-size:40px;
-
-color:#d6b25e;
-
-margin-bottom:20px;
-
-}
-
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-
 <body>
 
+<!-- ========================================= -->
+<!-- PANTALLA DE CARGA -->
+<!-- ========================================= -->
 
-<div class="contenedor">
+<div id="loader">
 
+    <div class="loader-content">
 
-<!-- SELECCION DE IDIOMA -->
+        <h1>Samuel <span>&</span> Yulet</h1>
 
+        <p>Cargando invitación...</p>
 
-<div id="idioma">
-
-
-<div class="decoracion">
-💍
-</div>
-
-
-<h1 class="nombre">
-Samuel & Yulet
-</h1>
-
-
-<p class="subtitulo">
-
-Por favor, selecciona el idioma en el que deseas leer nuestra invitación.
-
-</p>
-
-
-<button onclick="seleccionarIdioma('es')">
-
-🇲🇽 Español
-
-</button>
-
-
-<button onclick="seleccionarIdioma('en')">
-
-🇺🇸 English
-
-</button>
-
+    </div>
 
 </div>
 
+<!-- ========================================= -->
+<!-- SELECCIÓN DE IDIOMA -->
+<!-- ========================================= -->
 
+<section id="language-screen">
 
+    <div class="language-card">
 
+        <h1>Samuel & Yulet</h1>
 
-<!-- INVITACION -->
+        <p>
 
+            Bienvenidos a nuestra invitación
 
-<div id="invitacion" class="oculto">
+        </p>
 
+        <div class="language-buttons">
 
-<div class="animacion">
+            <button id="btn-es">
 
+                🇲🇽 Español
 
-<div class="decoracion">
-💍
-</div>
+            </button>
 
+            <button id="btn-en">
 
-<h1 class="nombre">
+                🇺🇸 English
 
-Samuel & Yulet
+            </button>
 
-</h1>
+        </div>
 
+    </div>
 
-<p id="versiculo" class="texto">
+</section>
 
-</p>
+<!-- ========================================= -->
+<!-- BIENVENIDA -->
+<!-- ========================================= -->
 
+<section id="welcome" class="hidden">
 
-<button id="continuar" onclick="continuar()">
+    <div class="welcome-overlay">
 
-Continuar
+        <div class="welcome-content">
 
-</button>
+            <h3>
 
+                Con la bendición de Dios
 
-</div>
+            </h3>
 
+            <h1>
 
-</div>
+                Samuel
+                <span>&</span>
+                Yulet
 
+            </h1>
 
+            <p>
 
+                Nos sentimos muy felices de compartir contigo uno de los días más importantes de nuestras vidas.
 
+            </p>
 
-<!-- SIGUIENTE PARTE -->
+            <button id="enterInvitation">
 
+                Abrir Invitación
 
-<div id="principal" class="oculto">
+            </button>
 
+        </div>
 
-<div class="animacion">
+    </div>
 
+</section>
 
-<h1 class="nombre">
+<!-- ========================================= -->
+<!-- AQUÍ COMENZARÁ LA INVITACIÓN -->
+<!-- ========================================= -->
 
-Samuel & Yulet
+<main id="invitation" class="hidden">
 
-</h1>
+<!-- ========================================= -->
+<!-- INICIO PARTE 2 - PORTADA -->
+<!-- ========================================= -->
 
+<section id="hero">
 
-<p id="mensaje" class="texto">
+    <div class="hero-overlay">
 
-</p>
+        <div class="hero-content">
 
+            <p class="hero-subtitle">
+                Con la bendición de Dios y de nuestras familias
+            </p>
 
-</div>
+            <h1 class="hero-title">
+                Samuel
+                <span>&</span>
+                Yulet
+            </h1>
 
+            <p class="hero-date">
+                Muy pronto uniremos nuestras vidas en matrimonio
+            </p>
 
-</div>
+            <h2 class="wedding-date">
+                2026
+            </h2>
 
+            <div class="hero-image">
 
+                <!-- Aquí irá la foto principal -->
 
-</div>
+                <img
+                    src="fotos/portada.jpg"
+                    alt="Samuel y Yulet">
 
+            </div>
 
+            <div class="verse">
 
+                <p>
 
-<script>
+                    "Y sobre todas estas cosas vestíos de amor,
+                    que es el vínculo perfecto."
 
+                </p>
 
-let idiomaSeleccionado="es";
+                <span>
+                    Colosenses 3:14
+                </span>
 
+            </div>
 
+            <button id="continueButton">
 
-function seleccionarIdioma(idioma){
+                Continuar
 
+            </button>
 
-idiomaSeleccionado=idioma;
+        </div>
 
+    </div>
 
-document.getElementById("idioma").style.display="none";
+</section>
 
-document.getElementById("invitacion").style.display="block";
+<!-- ========================================= -->
+<!-- FIN PARTE 2 -->
+<!-- ========================================= -->
+ <section id="our-story">
 
+    <div class="container">
 
+        <h2>Nuestra Historia</h2>
 
-if(idioma=="es"){
+        <div class="story-text">
 
+            <p>
+                Dios escribió nuestra historia de una manera perfecta.
+                Cada momento, cada paso y cada prueba nos condujeron
+                hasta este día tan especial.
+            </p>
 
-document.getElementById("versiculo").innerHTML=
+            <p>
+                Hoy queremos compartir contigo la alegría de celebrar
+                el inicio de una nueva etapa en nuestras vidas.
+            </p>
 
-"“Todo tiene su tiempo, y todo lo que se quiere debajo del cielo tiene su hora.”<br><br>Eclesiastés 3:1";
+        </div>
 
+        <div class="story-gallery">
 
-document.getElementById("continuar").innerHTML=
+            <div class="photo">
+                <img src="fotos/historia1.jpg" alt="Historia 1">
+            </div>
 
-"Continuar";
+            <div class="photo">
+                <img src="fotos/historia2.jpg" alt="Historia 2">
+            </div>
 
+            <div class="photo">
+                <img src="fotos/historia3.jpg" alt="Historia 3">
+            </div>
 
-}
+        </div>
 
+    </div>
 
-else{
+</section>
+  <section id="countdown">
 
+    <div class="container">
 
-document.getElementById("versiculo").innerHTML=
+        <h2>Faltan...</h2>
 
-"“To everything there is a season, and a time for every purpose under heaven.”<br><br>Ecclesiastes 3:1";
+        <p class="countdown-text">
 
+            Para el día en que Dios unirá nuestras vidas en matrimonio.
 
-document.getElementById("continuar").innerHTML=
+        </p>
 
-"Continue";
+        <div class="countdown-box">
 
+            <div class="time-box">
+                <span id="days">00</span>
+                <small>Días</small>
+            </div>
 
-}
+            <div class="time-box">
+                <span id="hours">00</span>
+                <small>Horas</small>
+            </div>
 
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <small>Minutos</small>
+            </div>
 
-}
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <small>Segundos</small>
+            </div>
 
+        </div>
 
+    </div>
 
+</section>
+</main>
 
-function continuar(){
-
-
-document.getElementById("invitacion").style.display="none";
-
-document.getElementById("principal").style.display="block";
-
-
-
-if(idiomaSeleccionado=="es"){
-
-
-document.getElementById("mensaje").innerHTML=
-
-"Nos encantaría compartir este momento tan especial contigo.";
-
-
-}
-
-else{
-
-
-document.getElementById("mensaje").innerHTML=
-
-"We would love to share this special moment with you.";
-
-
-}
-
-
-}
-
-
-
-</script>
-
+<script src="script.js"></script>
 
 </body>
 
